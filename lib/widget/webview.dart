@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
-const CATCH_URLS = ['m.ctrip.com', 'm.ctrip.com/html5/', 'm.ctrip.com.html5'];
+const CATCH_URLS = ['m.ctrip.com', 'm.ctrip.com/html5/', 'm.ctrip.com.html5', 'https://m.ctrip.com/'];
 
 class WebView extends StatefulWidget {
   final String url;
@@ -97,15 +97,6 @@ class _WebViewState extends State<WebView> {
           Expanded(
               child: WebviewScaffold(
             url: widget.url,
-            withZoom: true,
-            hidden: true,
-            initialChild: Container(
-              color: Colors.white12,
-              child: Text(
-                'Loading...',
-                style: TextStyle(fontSize: 20, color: Colors.black54),
-              ),
-            ),
           ))
         ],
       ),
