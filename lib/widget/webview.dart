@@ -72,12 +72,11 @@ class _WebViewState extends State<WebView> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
-    super.dispose();
     _onUrlChanged.cancel();
     _onWebViewStateChanged.cancel();
     _onHttpError.cancel();
     webviewReference.dispose();
+    super.dispose();
   }
 
   @override
@@ -111,6 +110,8 @@ class _WebViewState extends State<WebView> {
       );
     }
     return Container(
+      color: backgroudColor,
+      padding: EdgeInsets.fromLTRB(0, 40, 0, 10),
       height: 30,
       child: FractionallySizedBox(
         widthFactor: 1,
@@ -118,6 +119,9 @@ class _WebViewState extends State<WebView> {
         child: Stack(
           children: [
             GestureDetector(
+              onTap: (){
+                Navigator.pop(context);
+              },
               child: Container(
                 margin: EdgeInsets.only(left: 10),
                 child: Icon(
