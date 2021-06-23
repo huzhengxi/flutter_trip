@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
-const CATCH_URLS = ['m.ctrip.com', 'm.ctrip.com/html5/', 'm.ctrip.com.html5', 'https://m.ctrip.com/'];
+const CATCH_URLS = ['m.ctrip.com', 'm.ctrip.com/html5/', 'm.ctrip.com.html5', 'https://m.ctrip.com/', 'https://m.ctrip.com/webapp/hotel/forcelogin/'];
 
 class WebView extends StatefulWidget {
   final String url;
@@ -106,6 +106,7 @@ class _WebViewState extends State<WebView> {
     if (widget.hideAppBar ?? false) {
       return Container(
         color: backgroudColor,
+        padding: EdgeInsets.fromLTRB(0, 40, 0, 10),
         height: 30,
       );
     }
